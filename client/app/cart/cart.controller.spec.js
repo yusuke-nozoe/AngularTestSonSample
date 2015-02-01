@@ -38,10 +38,10 @@ describe('Controller: CartCtrl', function () {
       expect(scope.cartItems['20'].count).toBe(3);
   });
 
-  //it('カートから削除', function() {
-  //    scope.removeCart('20');
-  //    expect(scope.cartItems['20'].count).toBe(1);
-  //    scope.removeCart('20');
-  //    expect(scope.cartItems['20']).not.toBeDefined();
-  //});
+  it('カートから削除', function() {
+      scope.removeCart('20');
+      expect(scope.cartItems['20'].count).toBe(1);
+      scope.removeCart('20');
+      expect(scope.cartItems['20']).not.toBeDefined();
+  });
 });
