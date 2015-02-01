@@ -7,19 +7,17 @@ angular.module('AngularJsTestson')
     
 
     var refresh = function(){
-      $scope.cartItems = {};
-      angular.forEach(cartItems, function(v){
-        if ($scope.cartItems[v.productId]){
-          $scope.cartItems[v.productId].count++;
-        }else{
-          $scope.cartItems[v.productId] = {
-            productName: v.productName,
-            price: v.price,
+        var items;
+      for (var i=0; i<cartItems.items.length; i++) {
+          items[cartItem.items[i]] = {
+            productName: cartItem.items[i].productName,
+            price: cartItem.items[i].price,
             count: 1,
-            cartObject: v
+            cartObject: items[i]
           };
-        }
-      });
+
+      }
+      $scope.cartItems = cartItems;
     };
     refresh();
 
