@@ -10,12 +10,6 @@ angular.module('AngularJsTestson')
       add: function (item) {
         return items.push(item);
       },
-      remove: function(item) {
-        var index = items.indexOf(item);
-        if(index > -1) {
-          items.splice(index, 1);
-        }
-      },
       removeProductId: function(productId) {
         angular.forEach(items, function(v,k){
           if(this.keepGoing) {
