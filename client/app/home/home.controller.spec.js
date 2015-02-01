@@ -14,12 +14,12 @@ describe('Controller: HomeController', function () {
       $scope: scope
     });
     httpBackend = $httpBackend;
+    httpBackend.expectGET('/api/products').respond(products);
   }));
 
   var products = [{id: 10, name: 'redbull', price: 250},
                   {id: 11, name: 'コーヒー', price: 100}];
 
-  httpBackend.expectGET('/api/products').respond(200, products);
 
   it('products取得', function () {
       expect(scope.products).toBeUndefined();
