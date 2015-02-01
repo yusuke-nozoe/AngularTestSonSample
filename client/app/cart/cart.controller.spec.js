@@ -10,9 +10,9 @@ describe('Controller: CartCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, cartItem) {
     scope = $rootScope.$new();
-    cartItem.items = [{productId: 10, productName: 'コーヒー', price: 100},
-                      {productId: 20, productName: '紅茶', price: 200},
-                      {productId: 20, productName: '紅茶', price: 200}];
+    cartItem.add({productId: 10, productName: 'コーヒー', price: 100});
+    cartItem.add({productId: 20, productName: '紅茶', price: 200});
+    cartItem.add({productId: 20, productName: '紅茶', price: 200});
     CartCtrl = $controller('CartCtrl', {
       $scope: scope,
       cartItem: cartItem
@@ -33,8 +33,15 @@ describe('Controller: CartCtrl', function () {
                                                          price: 200}}});
   });
 
-  it('カードに追加', function() {
+  it('カートに追加', function() {
       scope.addCart('20');
       expect(scope.cartItems['20'].count).toBe(3);
   });
+
+  //it('カートから削除', function() {
+  //    scope.removeCart('20');
+  //    expect(scope.cartItems['20'].count).toBe(1);
+  //    scope.removeCart('20');
+  //    expect(scope.cartItems['20']).not.toBeDefined();
+  //});
 });
