@@ -8,6 +8,7 @@ angular.module('AngularJsTestson')
     // Public API here
     return {
       add: function (item) {
+            console.log(item);
         return items.push(item);
       },
       remove: function(item) {
