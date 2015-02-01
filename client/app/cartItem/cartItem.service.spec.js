@@ -16,8 +16,11 @@ describe('Service: cartItem', function () {
   });
 
   it('商品追加', function() {
-      expect(cartItem.add({productId: 10, name: 'はじめてのAngularJS', price: 2000})).toBe(1);
-      expect(cartItem.add({productId: 13, name: '味わいカルピス', price: 100})).toBe(2);
+      var products = [{productId: 10, name: 'はじめてのAngularJS', price: 2000},
+                      {productId: 13, name: '味わいカルピス', price: 100}];
+      expect(cartItem.add(products[0])).toBe(1);
+      expect(cartItem.add(products[1])).toBe(2);
+      expect(cartItem.items).toEqual(products);
   });
 
   it('商品１個追加１個削除', function() {
