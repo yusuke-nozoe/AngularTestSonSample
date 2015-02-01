@@ -44,4 +44,10 @@ describe('Controller: CartCtrl', function () {
       scope.removeCart('20');
       expect(scope.cartItems['20']).not.toBeDefined();
   });
+
+  it('カートをクリア', function() {
+      scope.clearCart();
+      expect(scope.cartItems['10']).not.toBeDefined();
+      expect(scope.cartItems['20']).not.toBeDefined();
+  });
 });
