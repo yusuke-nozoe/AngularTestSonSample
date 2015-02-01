@@ -34,6 +34,7 @@ angular.module('AngularJsTestson')
       link: function (scope, element, attrs, ctrl) {
 
         var reg = /^[0-9]+$/;
+        scope.order = {};
 
         ctrl.$parsers.unshift(function(value){
           ctrl.$setValidity('telephone', reg.test(value));
