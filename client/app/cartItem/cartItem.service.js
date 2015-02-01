@@ -19,7 +19,6 @@ angular.module('AngularJsTestson')
             }
           }
         },{keepGoing:true});
-				return items.length;
       },
       clear: function() {
         items.length = 0;
