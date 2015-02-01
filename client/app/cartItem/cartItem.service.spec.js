@@ -20,4 +20,14 @@ describe('Service: cartItem', function () {
       expect(cartItem.add({productId: 13, name: '味わいカルピス', price: 100})).toBe(2);
   });
 
+  it('商品１個追加１個削除', function() {
+      expect(cartItem.add({productId: 10, name: 'はじめてのAngularJS', price: 2000}));
+      expect(cartItem.removeProductId(10)).toBe(0);
+  });
+
+  it('商品２個追加１個削除', function() {
+      expect(cartItem.add({productId: 10, name: 'はじめてのAngularJS', price: 2000}));
+      expect(cartItem.add({productId: 13, name: '味わいカルピス', price: 100}));
+      expect(cartItem.removeProductId(10)).toBe(1);
+  });
 });
