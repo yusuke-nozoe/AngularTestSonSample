@@ -5,6 +5,7 @@ public
 .DS_Store
 client/bower_components
 dist
+report
 report/*
 /server/config/local.env.js
 npm-debug.log
